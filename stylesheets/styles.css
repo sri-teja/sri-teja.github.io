@@ -211,13 +211,13 @@ footer {
   width:170px;
   float:left;
   position:fixed;
-  bottom:0px;
+  bottom:-20px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
 footer ul {
   list-style:none;
-  height:40px;
+  height:20px;
   padding:0;
   /*width:270px;*/
 }
