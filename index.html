@@ -1,158 +1,253 @@
-
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Sri Teja Allaparthi</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sri Teja Allaparthi</title>
+  <meta name="description" content="Sri Teja Allaparthi: co-founder and CTO of Swipe, builder of placeholderkit, IIIT Hyderabad computer science.">
+  <meta property="og:title" content="Sri Teja Allaparthi">
+  <meta property="og:description" content="Co-founder and CTO of Swipe. Building large-scale systems and open-source developer tools.">
+  <meta property="og:image" content="https://sri-teja.github.io/img/4d14e103-4973-4c08-b751-5c48633bb5cf.jpeg">
+  <link rel="icon" type="image/jpg" href="img/favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5f6368;
+      --line: #e7e4dd;
+      --accent: #e8590c;
+      --accent-soft: #fff1e8;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111113;
+        --surface: #1a1a1d;
+        --text: #ececec;
+        --muted: #a0a0a8;
+        --line: #2a2a2f;
+        --accent: #ff8a4c;
+        --accent-soft: #2a1b12;
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 Inter, system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
 
-    <link rel="icon" type="image/jpg" href="img/favicon.jpg">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Sri Teja Allaparthi</h1>
-        <p>Student/Researcher</p>
-        <!-- <p> IIIT Hyderabad</p> -->
-        <p><img src="img/4d14e103-4973-4c08-b751-5c48633bb5cf.jpeg" style="width: 170px; border-radius: 35px;"></img></p>
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+    nav .name { font-weight: 600; color: var(--text); white-space: nowrap; }
+    nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+    nav ul a { color: var(--muted); }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
 
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#interest">Research</a></li>
-          <li><a href="#publication">Publications</a></li>
-          <li><a href="#project">Projects</a></li>
-          <li><a href="#more">More</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </header>
-      <section>
-        <h2 id="about">About Me</h2>
+    .hero { display: flex; gap: 32px; align-items: center; padding: 72px 0 48px; }
+    .hero img {
+      width: 132px; height: 132px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+      border: 3px solid var(--surface); box-shadow: var(--shadow);
+    }
+    .hero h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
+    .hero .role { font-size: 18px; color: var(--muted); margin: 0 0 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .tags li {
+      font: 500 12px/1 "JetBrains Mono", monospace;
+      padding: 6px 10px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+    }
 
-        <p>Hey there, welcome!</p>
+    section { padding: 40px 0; border-top: 1px solid var(--line); }
+    h2 {
+      font: 500 13px/1 "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--muted); margin: 0 0 24px;
+    }
+    p { margin: 0 0 14px; }
 
-        <p>I'm currently working on <a href="https://getswipe.in">Swipe</a> with an awesome team. I did my Masters with major in Computer Science at <a href="https://www.iiit.ac.in/" target="_blank">IIIT Hyderabad</a>, worked with <a href="https://www.iiit.ac.in/people/faculty/vikram/" target="_blank">Assoc. Prof. Vikram Pudi</a> with focus on Data Mining, Machine Learning and Information Retrieval. 
-        I also did my bachelor's degree in the Department of Computer Science at <u>IIIT Hyderabad</u>, India. </p>
+    .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 20px 22px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+    }
+    .card .kicker { font: 500 12px/1 "JetBrains Mono", monospace; color: var(--muted); margin-bottom: 10px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { color: var(--muted); font-size: 15px; flex: 1; }
+    .card .links { display: flex; gap: 16px; font-size: 14px; font-weight: 500; }
 
-        <br>
-        <h2 id="interest">Research Interest</h2>
+    .list { list-style: none; margin: 0; padding: 0; }
+    .list li { padding: 14px 0; border-bottom: 1px dashed var(--line); }
+    .list li:last-child { border-bottom: 0; }
+    .list .title { font-weight: 600; }
+    .list .meta { color: var(--muted); font-size: 14px; }
 
-        <p>My work has been primarily focused on knowledge - both acquiring knowledge from text, and using structured knowledge to power downstream applications. Currently, I am working on <b>Controversy Detection</b>. Previously, I've worked on Medical Data Mining, Information Retrieval and Natural Language Processiing.</p>
-        <br>
+    details { margin-top: 6px; }
+    summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+    details p { font-size: 14px; color: var(--muted); margin-top: 8px; }
 
-        <h2 id="publication">Publications</h2>
-        <ul class="pub">
-	        <li>
-            <p> Allaparthi, Sri Teja, Ganesh Yaparla, and Vikram Pudi. "<a href="https://ieeexplore.ieee.org/abstract/document/8588776" target="_blank">Sentiment and Semantic Deep Hierarchical Attention Neural Network for Fine Grained News Classification.</a>" 2018 IEEE International Conference on Big Knowledge (ICBK). IEEE, 2018.</p>
-          <h5> Abstract </h5> 
-          <p> The purpose of this study is to examine the differences between different types of news stories. Given the huge impact of social networks, online content plays an important role in forming or changing the opinions of people. Unlike traditional journalism where only certain news organizations can publish content, online journalism has given chance even for individuals to publish. This has its own advantages like individual empowerment but has given a chance to a lot of malicious entities to spread misinformation for their own benefit. As reported by many organizations in recent history, this even has influence on major events like the outcome of elections. Therefore, it is of great importance now, to have some sort of automated classification of news stories. In this work, we propose a deep hierarchical attention neural architecture combining sentiment and semantic embeddings for more accurate fine grained classification of news stories. Experimental results show that the sentiment embedding along with semantic information outperform several state-of-the art methods in this task.</p>
-         </li>
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 10px 0; }
+    .timeline .when { font: 13px/1.6 "JetBrains Mono", monospace; color: var(--muted); padding-top: 2px; }
 
-          <li>
-		        <p> A. Sriteja, P. Pandey and V. Pudi, "<a href="https://goo.gl/uf7ftJ" target="_blank">Controversy Detection Using Reactions on Social Media</a>," 2017 IEEE International Conference on Data Mining Workshops (ICDMW), New Orleans, LA, USA, 2017, pp. 884-889.</p>
-  				<h5> Abstract </h5> 
-  				<p> In this work we demonstrate a method to detect controversy on news issues. This is done by performing an analysis of people's reaction on social media to news articles reporting these issues. Detecting controversial news topics on web is a relevant problem today. It helps to identify the issues upon which people have divided opinion and is specially useful on topics such as a presidential election, government reforms, climate change etc. We use sentiment analysis and word matching to accomplish this task. We show the application of our method for detecting controversial topics during the US Presidential elections 2016.</p>
-  			 </li>
-         
-		    </ul>
-        <br>
+    .contact { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 500; font-size: 14px;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; }
 
-        <h2 id="project">Projects</h2>
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
-        <p>Here are some of my projects:</p>
-
-        <ul class="proj">
-          <li><a href="#">Machine Learning - Medical Data Analysis using Dynamic Decision Trees</a><br>
-          Implemented a model which automatically learns the hidden patterns in the medical data available from different blogs over the web and identifies the diseases and classify accordingly to facilitate the feature of learning the symptoms accurately and map them to the possible diseases.
-          </li>
-
-          <li><a href="https://goo.gl/2DYzk8" target="_blank">Machine Learning - Chemical Named Entity Recognition</a><br>
-          Obtaining previous knowledge on chemicals, such as biological properties or toxic effects, can help in many aspects
-          of drug development processes. In this project we discussed various algorithms implemented to extract chemical information and chemical-related entities such as drug names and source materials from text in several domains such as bioinformatics and nanoinformatics. We compared the performances of these algorithms with each other.
-          </li>
-
-          <li><a href="#">Information Retrieval - Wikipedia Search engine</a><br>
-          Fetching pages from Wikipedia dump by analyzing the multiple query words, the size of index was less than quarter of the size of Wikipedia dump. Implemented using tokenisation, stemming, inverted indexes, and different degrees of relevancy. It can be used as a search framework wherever we have to deal with a huge data dump.
-          </li>
-          
-          <li> <a href="#">Machine Learning - Sentiment Analysis from Tweets</a><br>
-          Implemented Sentiment Specific Word Embedding (SSWE) model in Torch. Our task is to classify tweets into Negative, Positive and Neutral. Obtain word vectors which contain both sentiment and syntactic information’s from tweets of Corpus of 10M tweets. These word vectors are used to train the SVM model and experimented on test data.
-          </li>
-
-          <li> <a href="#">Information Retrieval and Data Mining - Algorithm Name Detection</a><br>
-          Extraction of algorithm name from research papers - allows the users to list out the name of algorithms being discussed in the paper by analyzing the contents of the research document. 
-          </li>
-
-        </ul>
-
-        <p>Here are some technical reports that I wrote :</p>
-
-        <ul class="report">
-          <li><a href="https://goo.gl/HiAKmQ" target="_blank">Fake news detection</a><br></li>
-          <li><a href="https://goo.gl/M8u4JQ" target="_blank">Dynamic Decision Analysis in Medical Diagnosis</a><br></li>
-          <li><a href="https://goo.gl/cu3Xmr" target="_blank">Medical Data Analysis</a><br></li>
-          <li><a href="https://goo.gl/8GtRd2" target="_blank">Focused Crawling for extracting medical terms and Treatment methods</a><br></li>
-          <li><a href="https://goo.gl/zb7Rhi" target="_blank">Knowledge Base</a> - Construction of a relational database with predefined columns from a huge text corpus using Text Mining techniques<br></li>
-          <li><a href="https://goo.gl/LvBi65" target="_blank">Exhaustive list of problems in Ontology Learning</a><br></li>
-          <li><a href="https://goo.gl/nm1Tjn" target="_blank">List of papers on Ontology Learning</a><br></li>
-
-        </ul>
-
-        <h2 id="more">More About Me</h2>
-
-        <p>Here are more facts about me:</p>
-
-        <ul class="pub">
-          <li>I am interested in Entrepreneurship. It interests me because it makes me try something new. I think about solving problems and finding solutions and I build things in sparetime. Check out some of my work and experience at <a href="https://www.linkedin.com/in/sriteja95/" target="_blank">my LinkedIn page</a>.
-          </li>
-        </ul>
-
-        <br>
-        <h2 id="contact">Contact</h2>
-
-        <dl>
-          <dt>Email</dt>
-          <dd>sriteja ~at~ getswipe ~dot~ in</dd>
-        </dl>
-        <img src="http://hitwebcounter.com/counter/counter.php?page=6806076&style=0001&nbdigits=5&type=page" title="." Alt="."   border="0" style="position: relative; bottom:0px; float:right;">
-      </section>
-
-      <footer>
-        <ul>
-          <li><a href="https://github.com/sri-teja" target="_blank"><i class="fa fa-fw fa-lg fa-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/sriteja95" target="_blank"><i class="fa fa-fw fa-lg fa-linkedin"></i></a></li>
-          <li><a href="https://facebook.com/sriteja95" target="_blank"><i class="fa fa-fw fa-lg fa-facebook"></i></a></li>
-        </ul>
-        <!-- <p>This project is maintained by <a href="http://github.com/orderedlist">Steve Smith</a></p> -->
-        <p><small>Using theme <a href="https://github.com/orderedlist/minimal">minimal</a>.</small></p>
-      </footer>
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .hero { flex-direction: column; align-items: flex-start; gap: 20px; padding: 48px 0 32px; }
+      .hero h1 { font-size: 32px; }
+      .timeline li { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="name" href="#">Sri Teja</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#building">Building</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  </nav>
 
-    ga('create', 'UA-48460522-4', 'auto');
-    ga('send', 'pageview');
-    </script>
+  <main class="wrap">
+    <header class="hero">
+      <img src="img/4d14e103-4973-4c08-b751-5c48633bb5cf.jpeg" alt="Sri Teja Allaparthi">
+      <div>
+        <h1>Sri Teja Allaparthi</h1>
+        <p class="role">Co-founder &amp; CTO at <a href="https://getswipe.in" target="_blank" rel="noopener">Swipe</a>. Hyderabad, India.</p>
+        <ul class="tags">
+          <li>large-scale systems</li>
+          <li>developer tools</li>
+          <li>building with AI</li>
+          <li>open source</li>
+        </ul>
+      </div>
+    </header>
 
-<!-- hitwebcounter.com --><!-- <a href="http://www.hitwebcounter.com" title="My Traffic Estimate" 
-target="_blank" style="font-family: Geneva, Arial, Helvetica; 
-font-size: 11px; color: #85948C; text-decoration: underline ;"><em>My Traffic Estimate                                        </em>
-</a>
- -->
+    <section id="about">
+      <h2>About</h2>
+      <p>I build products and the systems behind them. Most of my time goes into <a href="https://getswipe.in" target="_blank" rel="noopener">Swipe</a>, where I lead engineering as co-founder and CTO.</p>
+      <p>On the side I make small, focused developer tools and release them as open source. Lately I build a lot of it together with AI coding agents, and I enjoy making tools that work well for both people and those agents.</p>
+      <p>Before Swipe, I did my B.Tech and an MS by Research in Computer Science at <a href="https://www.iiit.ac.in/" target="_blank" rel="noopener">IIIT Hyderabad</a>, working with Prof. Vikram Pudi on data mining, machine learning and information retrieval.</p>
+    </section>
 
-<!-- Start of HubSpot Embed Code -->
-  <!--<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6238488.js"></script>-->
-<!-- End of HubSpot Embed Code -->
+    <section id="building">
+      <h2>What I'm building</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="kicker">company · co-founder &amp; CTO</div>
+          <h3>Swipe</h3>
+          <p>Billing, invoicing and business software for growing businesses in India.</p>
+          <div class="links"><a href="https://getswipe.in" target="_blank" rel="noopener">getswipe.in →</a></div>
+        </div>
+        <div class="card">
+          <div class="kicker">open source · npm</div>
+          <h3>placeholderkit</h3>
+          <p>Realistic placeholder content for prototypes: avatars, animal characters, images, logos, icons and connected fake business data. Deterministic and fully offline.</p>
+          <div class="links">
+            <a href="https://sri-teja.github.io/placeholderkit/">Website →</a>
+            <a href="https://github.com/sri-teja/placeholderkit" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.npmjs.com/package/@placeholderkit/core" target="_blank" rel="noopener">npm</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="research">
+      <h2>Research</h2>
+      <p>At IIIT Hyderabad my work focused on getting knowledge out of text and using it downstream: controversy detection, news classification, medical data mining, information retrieval and NLP.</p>
+      <ul class="list">
+        <li>
+          <div class="title"><a href="https://ieeexplore.ieee.org/abstract/document/8588776" target="_blank" rel="noopener">Sentiment and Semantic Deep Hierarchical Attention Neural Network for Fine Grained News Classification</a></div>
+          <div class="meta">Allaparthi, Yaparla, Pudi · IEEE ICBK 2018</div>
+          <details>
+            <summary>Abstract</summary>
+            <p>A deep hierarchical attention architecture that combines sentiment and semantic embeddings for fine-grained classification of news stories, motivated by the spread of misinformation online. Sentiment embeddings together with semantic information outperform several state-of-the-art methods on the task.</p>
+          </details>
+        </li>
+        <li>
+          <div class="title"><a href="https://goo.gl/uf7ftJ" target="_blank" rel="noopener">Controversy Detection Using Reactions on Social Media</a></div>
+          <div class="meta">Sriteja, Pandey, Pudi · IEEE ICDM Workshops 2017, New Orleans</div>
+          <details>
+            <summary>Abstract</summary>
+            <p>Detects controversy on news issues by analysing people's reactions to news articles on social media, using sentiment analysis and word matching, applied to topics from the 2016 US presidential election.</p>
+          </details>
+        </li>
+      </ul>
+
+      <details style="margin-top:20px">
+        <summary>Earlier projects and reports</summary>
+        <ul class="list" style="margin-top:8px">
+          <li><div class="title">Medical data analysis with dynamic decision trees</div><div class="meta">Learning symptom-to-disease patterns from medical blogs on the web.</div></li>
+          <li><div class="title"><a href="https://goo.gl/2DYzk8" target="_blank" rel="noopener">Chemical named entity recognition</a></div><div class="meta">Comparing algorithms that extract drug names and chemical entities from text.</div></li>
+          <li><div class="title">Wikipedia search engine</div><div class="meta">Inverted index under a quarter of the dump's size, with stemming and ranked relevance.</div></li>
+          <li><div class="title">Sentiment-specific word embeddings for tweets</div><div class="meta">SSWE in Torch over a 10M-tweet corpus, feeding an SVM classifier.</div></li>
+          <li><div class="title">Reports</div><div class="meta">
+            <a href="https://goo.gl/HiAKmQ" target="_blank" rel="noopener">Fake news detection</a> ·
+            <a href="https://goo.gl/M8u4JQ" target="_blank" rel="noopener">Dynamic decision analysis in medical diagnosis</a> ·
+            <a href="https://goo.gl/8GtRd2" target="_blank" rel="noopener">Focused crawling for medical terms</a> ·
+            <a href="https://goo.gl/zb7Rhi" target="_blank" rel="noopener">Knowledge base construction</a> ·
+            <a href="https://goo.gl/LvBi65" target="_blank" rel="noopener">Problems in ontology learning</a>
+          </div></li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="journey">
+      <h2>Journey</h2>
+      <ul class="timeline">
+        <li><span class="when">now</span><span>Co-founder &amp; CTO, <a href="https://getswipe.in" target="_blank" rel="noopener">Swipe</a>. Building <a href="https://sri-teja.github.io/placeholderkit/">placeholderkit</a> on the side.</span></li>
+        <li><span class="when">2017–2018</span><span>Published at IEEE ICDM Workshops and IEEE ICBK.</span></li>
+        <li><span class="when">IIIT-H</span><span>B.Tech and MS by Research, Computer Science. Data mining, ML and IR with Prof. Vikram Pudi.</span></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Say hello</h2>
+      <p>Always happy to talk with people building startups or developer tools.</p>
+      <div class="contact">
+        <a class="btn" href="https://github.com/sri-teja" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/sriteja95" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          LinkedIn
+        </a>
+        <span class="btn" title="Email">sriteja ~at~ getswipe ~dot~ in</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© Sri Teja Allaparthi</div>
+  </footer>
 </body>
 </html>
